@@ -8,7 +8,11 @@
 @for (todo of todos; track $index) {
 <p>
   <input type="checkbox" (change)="toggle($index)" />
-  {{ todo.text }}
+  @if (todo.done) {
+  <s>{{ todo.text }}</s>
+  } @else {
+  <span>{{ todo.text }} </span>
+  }
 </p>
 } @empty {
 <p>No todos</p>

@@ -1,10 +1,14 @@
-<h1>Todos</h1>
-<input #text />
-<button (click)="add(text.value)">Add</button>
+<form (submit)="add(text.value, $event)">
+  <h1>Todos</h1>
+  <input #text />
+  <button type="submit">Add</button>
+</form>
+<p>List: ( {{ finishedCount() }} / {{ todos.length }} )</p>
 
-@for (Todo of todos; track $index) {
+@for (todo of todos; track $index) {
 <p>
   <input type="checkbox" (change)="toggle($index)" />
+  {{ todo.text }}
 </p>
 } @empty {
 <p>No todos</p>

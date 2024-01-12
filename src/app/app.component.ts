@@ -18,5 +18,7 @@ export class AppComponent {
     this.todos.push({ text, done: false });
   }
 
-  toggle(index: number) {}
+  toggle(index: number) {
+    this.todos[index].done = !this.todos[index].done;
+  }
 }

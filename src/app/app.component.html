@@ -1,1 +1,11 @@
 <h1>Todos</h1>
+<input #text />
+<button (click)="add(text.value)">Add</button>
+
+@for (Todo of todos; track $index) {
+<p>
+  <input type="checkbox" (change)="toggle($index)" />
+</p>
+} @empty {
+<p>No todos</p>
+}

@@ -14,7 +14,9 @@ export class AppComponent {
 
   todos: Array<{ done: boolean; text: string }> = [];
 
-  add(text: string) {}
+  add(text: string) {
+    this.todos.push({ text, done: false });
+  }
 
   toggle(index: number) {}
 }
